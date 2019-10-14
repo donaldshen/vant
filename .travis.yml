@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
-addons:
-  chrome: stable
+#addons:
+#  chrome: stable
 node_js:
   - 10
 os: linux
@@ -10,13 +10,18 @@ cache:
 branches:
   only:
     - master
-    - dev
 install:
   - |
     yarn install
-script:
   - |
     npm run lint && npm run test
+script:
+  - ./build/release-site.sh
 after_success:
   - |
     cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+deploy:
+  - provider: pages
+    local-dir: docs/dist
+    github-token: $GITHUB_TOKEN
+    skip-cleanup: true
