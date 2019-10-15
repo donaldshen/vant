@@ -29,18 +29,18 @@
 
 ```bash
 # Using npm
-npm i vant -S
+npm i @femessage/vant -S
 
 # Using yarn
-yarn add vant
+yarn add @femessage/vant
 ```
 
 ## Quickstart
 
 ```js
 import Vue from 'vue';
-import { Button } from 'vant';
-import 'vant/lib/index.css';
+import { Button } from '@femessage/vant';
+import '@femessage/vant/lib/index.css';
 
 Vue.use(Button);
 ```
