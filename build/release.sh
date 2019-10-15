@@ -1,28 +1,9 @@
 #!/usr/bin/env sh
-set -e
-echo "Enter release version: "
-read VERSION
+yarn stdver
 
-read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  # build
-  npm version $VERSION --no-git-tag-version
-  VERSION=$VERSION npm run build:lib
+yarn build:lib
 
-  # commit
-  git tag v$VERSION
-  git commit -am "build: release $VERSION"
+git remote add github https://$GITHUB_TOKEN@github.com/FEMessage/vant.git > /dev/null 2>&1
+git push github HEAD:master --follow-tags
 
-  # publish
-  git push origin dev
-  git push origin refs/tags/v$VERSION
-
-  if [[ $VERSION =~ [beta] ]]
-  then
-    npm publish --tag beta
-  else 
-    npm publish
-  fi
-fi
+GREN_GITHUB_TOKEN=$GITHUB_TOKEN yarn gren

@@ -17,6 +17,7 @@ install:
     npm run lint && npm run test
 script:
   - ./build/release-site.sh
+  - ./build/release.sh
 after_success:
   - |
     cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
@@ -24,4 +25,8 @@ deploy:
   - provider: pages
     local-dir: docs/dist
     github-token: $GITHUB_TOKEN
+    skip-cleanup: true
+  - provider: npm
+    email: levy9527@qq.com
+    api_key: $NPM_TOKEN
     skip-cleanup: true
