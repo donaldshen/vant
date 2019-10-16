@@ -16,8 +16,8 @@ install:
   - |
     npm run lint && npm run test
 script:
-  - ./build/release-site.sh
   - ./build/release.sh
+  - ./build/release-site.sh
 after_success:
   - |
     cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
