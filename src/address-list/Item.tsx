@@ -47,8 +47,8 @@ function AddressItem(
   }
 
   const renderRightIcon = () => (
-    <div class={bem('icons')}>
-      <span class={bem('icons-wrapper')}>
+    <div class={bem('icons-wrapper')}>
+      <span class={bem('icons-group')}>
         <Icon
           name="edit"
           class={bem('edit')}
