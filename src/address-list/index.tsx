@@ -53,6 +53,9 @@ function AddressList(
         onClick={() => {
           emit(ctx, 'click-item', item, index);
         }}
+        onDelete={() => {
+          emit(ctx, 'delete', item, index)
+        }}
       />
     ));
   }
