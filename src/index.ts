@@ -59,6 +59,7 @@ import RadioGroup from './radio-group';
 import Rate from './rate';
 import Row from './row';
 import Search from './search';
+import Select from './select';
 import Sidebar from './sidebar';
 import SidebarItem from './sidebar-item';
 import Skeleton from './skeleton';
@@ -148,6 +149,7 @@ const components = [
   Rate,
   Row,
   Search,
+  Select,
   Sidebar,
   SidebarItem,
   Skeleton,
@@ -246,6 +248,7 @@ export {
   Rate,
   Row,
   Search,
+  Select,
   Sidebar,
   SidebarItem,
   Skeleton,
