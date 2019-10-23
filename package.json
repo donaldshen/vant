@@ -19,6 +19,7 @@
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag v2.1.0",
     "build:lib": "node build/build-lib.js",
+    "build:site": "npm run build:entry && cross-env NODE_ENV=production webpack --config build/webpack.site.prd.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",
