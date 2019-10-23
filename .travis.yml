@@ -21,6 +21,8 @@ script:
 after_success:
   - |
     cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+after_script:
+  - ./notify.sh
 deploy:
   - provider: pages
     local-dir: docs/dist
