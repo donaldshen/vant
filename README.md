@@ -53,6 +53,12 @@ See more in [Quickstart](https://femessage.github.io/vant#/en-US/quickstart).
 # local dev and preview site
 yarn dev
 
+# using eslint to check code style
+yarn lint
+
+# run unit test
+yarn test
+
 # build lib
 yarn build:lib
 
