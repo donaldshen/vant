@@ -47,6 +47,25 @@ Vue.use(Button);
 
 See more in [Quickstart](https://femessage.github.io/vant#/en-US/quickstart).
 
+## Development
+
+```sh
+# local dev and preview site
+yarn dev
+
+# build lib
+yarn build:lib
+
+# build site
+yarn build:site
+
+# publish lib to npm
+yarn release
+
+# publish site to github pages
+yarn release:site
+```
+
 ## Contribution
 
 Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
