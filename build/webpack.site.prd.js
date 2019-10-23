@@ -6,7 +6,7 @@ module.exports = merge(config, {
   mode: 'production',
   output: {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: 'https://femessage.github.io/vant',
+    publicPath: process.env.PUBLIC_PATH || 'https://femessage.github.io/vant',
     filename: '[name].[hash:8].js',
     chunkFilename: 'async_[name].[chunkhash:8].js'
   }
