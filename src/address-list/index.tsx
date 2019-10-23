@@ -54,7 +54,7 @@ function AddressList(
           emit(ctx, 'click-item', item, index);
         }}
         onDelete={() => {
-          emit(ctx, 'delete', item, index)
+          emit(ctx, 'delete', item, index);
         }}
       />
     ));
