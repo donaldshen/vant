@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/youzan/vant/compare/v2.3.0...v2.4.0) (2019-10-23)
+
+
+### Features
+
+* add `delete` for address list ([a79e2d5](https://github.com/youzan/vant/commit/a79e2d56e7010814df5f7abc822e10dbafa5946a))
+* **address-list:** 添加`删除`按钮 ([e339bba](https://github.com/youzan/vant/commit/e339bba794d0f92bae7fc85bc36d899948671def))
+
 ## [2.3.0](https://github.com/youzan/vant/compare/v2.2.7...v2.3.0) (2019-10-15)
 
 
