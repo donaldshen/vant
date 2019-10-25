@@ -78,6 +78,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | input-align | Text align of field, can be set to `center` `right` | *string* | `left` | - |
 | left-icon | Left icon name | *string* | `search` | - |
 | right-icon | Right icon name | *string* | - | - |
+| removeForm | render component without form element | *boolean* | `false` | - |
 
 ### Events
 
