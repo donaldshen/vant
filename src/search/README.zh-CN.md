@@ -31,6 +31,7 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
     show-action
     @search="onSearch"
     @cancel="onCancel"
+    :remove-form="true"
   />
 </form>
 ```
