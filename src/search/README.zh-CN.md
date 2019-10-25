@@ -73,6 +73,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | `search` | - |
 | right-icon | 输入框右侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| removeForm | 取消默认 form 元素嵌套，默认嵌套 form。在 iOS 下显示「搜索」按钮 | *boolean* | `false` | - |
 
 ### Events
 
