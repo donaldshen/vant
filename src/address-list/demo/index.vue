@@ -9,6 +9,8 @@
         @add="onAdd"
         @edit="onEdit"
         @delete="onDelete"
+        @click-item="onClick"
+        @set-default="onSetDefault"
       />
     </demo-block>
   </demo-section>
@@ -90,6 +92,14 @@ export default {
 
     onDelete(item, index) {
       this.$toast(`${this.$t('delete')}:${index}`);
+    },
+
+    onClick(item, index) {
+      console.log('on click', item, index);
+    },
+
+    onSetDefault(item, index) {
+      console.log('on set default', item, index);
     }
   }
 };
