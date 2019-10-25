@@ -24,7 +24,7 @@ v-model 用于控制搜索框中的文字，background 可以自定义搜索框�
 Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘上的搜索/回车按钮后触发，`cancel`事件在点击搜索框右侧取消按钮时触发
 
 ```html
-<form action="/">
+<form action="javascript:;">
   <van-search
     v-model="value"
     placeholder="请输入搜索关键词"

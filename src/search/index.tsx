@@ -69,15 +69,6 @@ function Search(
     );
   }
 
-  function WithForm(component: CreateElement) {
-    // 在 input 外层增加 form 标签，且 action 不为空，同时 input 的 type 为 search，即可在 iOS 输入法中显示搜索按钮。
-    return (
-      <form action="/">
-        {component()}
-      </form>
-    );
-  }
-
   const fieldData = {
     attrs: ctx.data.attrs,
     on: {
@@ -128,7 +119,13 @@ function Search(
     return SearchInput();
   }
 
-  return WithForm(SearchInput);
+  return (
+    // 在 input 外层增加 form 标签，且 action 不为空，同时 input 的 type 为 search，即可在 iOS 输入法中显示搜索按钮。
+    // eslint-disable-next-line
+    <form action="javascript:;">
+      {SearchInput()}
+    </form>
+  );
 }
 
 Search.props = {
