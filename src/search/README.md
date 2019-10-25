@@ -30,7 +30,7 @@ export default {
 `search` event will be triggered when click the search button on the keyboard, `cancel` event will be triggered when click the cancel button.
 
 ```html
-<form action="/">
+<form action="javascript:;">
   <van-search
     v-model="value"
     placeholder="Placeholder"
