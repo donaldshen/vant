@@ -42,7 +42,7 @@ export default {
 </form>
 ```
 
-> Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
+> Tips: Set props remove-from into true if you want to nest van-search with other input in same form tag
 
 ### Custom Action Button
 

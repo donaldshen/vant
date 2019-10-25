@@ -36,7 +36,7 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 </form>
 ```
 
-> Tips: 在 van-search 外层增加 form 标签，且 action 不为空，即可在 iOS 输入法中显示搜索按钮
+> Tips: 如果你希望 van-search 和其他表单项嵌套在同一个 from 标签下，可以设置属性 remove-form 为 true
 
 ### 自定义按钮
 
