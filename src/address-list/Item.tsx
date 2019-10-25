@@ -69,7 +69,7 @@ function AddressItem(
   const renderContent = () => {
     const { data } = props;
     const Info = [
-      <div onClick={onClick}>
+      <div class={bem('content')} onClick={onClick}>
         <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>
         <div class={bem('address')}>{data.address}</div>
       </div>,
