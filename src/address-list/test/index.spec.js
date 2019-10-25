@@ -27,22 +27,22 @@ test('unswitchable', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('select event', () => {
-  const onSelect = jest.fn();
+test('set default event', () => {
+  const onDefault = jest.fn();
   const wrapper = mount(AddressList, {
     propsData: {
       list
     },
     context: {
       on: {
-        select: onSelect
+        'set-default': onDefault
       }
     }
   });
 
   wrapper.find('.van-radio__icon').trigger('click');
 
-  expect(onSelect).toHaveBeenCalledTimes(1);
+  expect(onDefault).toHaveBeenCalledTimes(1);
 });
 
 test('click-item event', () => {
@@ -58,7 +58,7 @@ test('click-item event', () => {
     }
   });
 
-  wrapper.find('.van-address-item').trigger('click');
+  wrapper.find('.van-address-item__content').trigger('click');
 
   expect(onClickItem).toHaveBeenCalledTimes(1);
 });
