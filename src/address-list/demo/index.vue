@@ -95,11 +95,11 @@ export default {
     },
 
     onClick(item, index) {
-      console.log('on click', item, index);
+      this.$toast(`点击:${index}`);
     },
 
     onSetDefault(item, index) {
-      console.log('on set default', item, index);
+      this.$toast(`设为默认:${index}`);
     }
   }
 };
