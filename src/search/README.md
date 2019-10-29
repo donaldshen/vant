@@ -30,18 +30,19 @@ export default {
 `search` event will be triggered when click the search button on the keyboard, `cancel` event will be triggered when click the cancel button.
 
 ```html
-<form action="/">
+<form action="javascript:;">
   <van-search
     v-model="value"
     placeholder="Placeholder"
     show-action
     @search="onSearch"
     @cancel="onCancel"
+    :remove-form="true"
   />
 </form>
 ```
 
-> Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
+> Tips: Set props remove-from into true if you want to nest van-search with other input in same form tag
 
 ### Custom Action Button
 
@@ -78,6 +79,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | input-align | Text align of field, can be set to `center` `right` | *string* | `left` | - |
 | left-icon | Left icon name | *string* | `search` | - |
 | right-icon | Right icon name | *string* | - | - |
+| removeForm | render component without form element | *boolean* | `false` | - |
 
 ### Events
 

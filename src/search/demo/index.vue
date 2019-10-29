@@ -12,6 +12,7 @@
           show-action
           @search="onSearch"
           @cancel="onCancel"
+          :remove-form="true"
         />
       </form>
     </demo-block>
