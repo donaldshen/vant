@@ -1,6 +1,6 @@
 import Icon from '../icon';
 import Cell from '../cell';
-import { cellProps } from '../cell/shared';
+import { fieldProps } from './shared';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { createNamespace, isObj, isDef, addUnit } from '../utils';
@@ -11,23 +11,7 @@ export default createComponent({
   inheritAttrs: false,
 
   props: {
-    ...cellProps,
-    error: Boolean,
-    readonly: Boolean,
-    autosize: [Boolean, Object],
-    leftIcon: String,
-    rightIcon: String,
-    clearable: Boolean,
-    labelClass: null,
-    labelWidth: [Number, String],
-    labelAlign: String,
-    inputAlign: String,
-    errorMessage: String,
-    errorMessageAlign: String,
-    type: {
-      type: String,
-      default: 'text'
-    }
+    ...fieldProps
   },
 
   data() {
