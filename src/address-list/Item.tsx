@@ -18,13 +18,13 @@ export type AddressItemData = {
 export type AddressItemProps = {
   data: AddressItemData;
   disabled?: boolean;
-  switchable?: boolean;
 };
 
 export type AddressItemEvents = {
   onEdit(): void;
   onClick(): void;
-  onSelect(): void;
+  onDelete(): void;
+  onDefault(): void;
 };
 
 const [createComponent, bem] = createNamespace('address-item');
@@ -35,54 +35,62 @@ function AddressItem(
   slots: DefaultSlots,
   ctx: RenderContext<AddressItemProps>
 ) {
-  const { disabled, switchable } = props;
+  const { disabled } = props;
 
   function onClick() {
-    if (switchable) {
-      emit(ctx, 'select');
-    }
-
     emit(ctx, 'click');
   }
 
+  function onSetDefault() {
+    emit(ctx, 'default');
+  }
+
   const renderRightIcon = () => (
-    <Icon
-      name="edit"
-      class={bem('edit')}
-      onClick={(event: Event) => {
-        event.stopPropagation();
-        emit(ctx, 'edit');
-        emit(ctx, 'click');
-      }}
-    />
+    <div class={bem('icons-wrapper')}>
+      <Icon
+        name="edit"
+        class={bem('edit')}
+        onClick={(event: Event) => {
+          event.stopPropagation();
+          emit(ctx, 'edit');
+        }}
+      />
+      <Icon
+        name="delete"
+        class={bem('delete')}
+        onClick={(event: Event) => {
+          event.stopPropagation();
+          emit(ctx, 'delete');
+        }}
+      />
+    </div>
   );
 
   const renderContent = () => {
     const { data } = props;
     const Info = [
-      <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
-      <div class={bem('address')}>{data.address}</div>
+      <div class={bem('content')} onClick={onClick}>
+        <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>
+        <div class={bem('address')}>{data.address}</div>
+      </div>,
+      <div class={bem('bar')}>
+        <Radio name={data.id} onClick={onSetDefault} class={bem('set-default')}>
+          设为默认
+        </Radio>
+        {renderRightIcon()}
+      </div>
     ];
 
-    return switchable && !disabled ? (
-      <Radio name={data.id} iconSize={16}>
-        {Info}
-      </Radio>
-    ) : (
-      Info
-    );
+    return Info;
   };
 
   return (
     <Cell
       class={bem({ disabled })}
-      valueClass={bem('value')}
-      clickable={switchable && !disabled}
+      clickable={!disabled}
       scopedSlots={{
-        default: renderContent,
-        'right-icon': renderRightIcon
+        default: renderContent
       }}
-      onClick={onClick}
       {...inherit(ctx)}
     />
   );
@@ -91,7 +99,6 @@ function AddressItem(
 AddressItem.props = {
   data: Object,
   disabled: Boolean,
-  switchable: Boolean
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(AddressItem);

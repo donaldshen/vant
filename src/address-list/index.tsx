@@ -10,7 +10,6 @@ import { ScopedSlot, DefaultSlots } from '../utils/types';
 
 export type AddressListProps = {
   value?: string | number;
-  switchable: boolean;
   disabledText?: string;
   addButtonText?: string;
   list?: AddressItemData[];
@@ -39,19 +38,21 @@ function AddressList(
         data={item}
         key={item.id}
         disabled={disabled}
-        switchable={props.switchable}
-        onSelect={() => {
-          emit(ctx, disabled ? 'select-disabled' : 'select', item, index);
-
-          if (!disabled) {
-            emit(ctx, 'input', item.id);
-          }
-        }}
         onEdit={() => {
           emit(ctx, disabled ? 'edit-disabled' : 'edit', item, index);
         }}
         onClick={() => {
           emit(ctx, 'click-item', item, index);
+        }}
+        onDelete={() => {
+          emit(ctx, 'delete', item, index);
+        }}
+        onDefault={() => {
+          emit(ctx, disabled ? 'set-default-disabled' : 'set-default', item, index);
+
+          if (!disabled) {
+            emit(ctx, 'input', item.id);
+          }
         }}
       />
     ));
@@ -86,11 +87,7 @@ AddressList.props = {
   disabledList: Array,
   disabledText: String,
   addButtonText: String,
-  value: [Number, String],
-  switchable: {
-    type: Boolean,
-    default: true
-  }
+  value: [Number, String]
 };
 
 export default createComponent<AddressListProps>(AddressList);

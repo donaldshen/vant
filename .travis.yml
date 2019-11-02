@@ -13,14 +13,15 @@ branches:
 install:
   - |
     yarn install
-  - |
-    npm run lint && npm run test
+  #- |
+  #  npm run lint && npm run test
 script:
   - ./build/release.sh
   - ./build/release-site.sh
-after_success:
-  - |
-    cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+#after_success:
+#  - cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+after_script:
+  - ./notify.sh
 deploy:
   - provider: pages
     local-dir: docs/dist

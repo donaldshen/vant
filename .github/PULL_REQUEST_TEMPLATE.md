@@ -28,3 +28,20 @@ Allowed Types:
 - chore
 - refactor
 - breaking change
+
+#### 屏幕截图
+
+运行 eslint 屏幕截图
+
+运行 test 屏幕截图
+
+```
+如果你的改动只涉及到部分组件
+则只需要针对性的运行 `test` 即可
+
+e.g.
+这次 pr 只改动了 地址列表组件(src/address-list)
+则可以运行 `yarn test src/address-list` 测试改动
+
+再把运行结果截图贴在这里!
+```

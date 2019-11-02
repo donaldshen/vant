@@ -15,10 +15,11 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.site.dev.js",
-    "lint": "eslint ./src --ext .js,.vue,.ts,.tsx && stylelint \"src/**/*.less\" --fix",
+    "lint": "eslint ./src --ext .js,.vue,.ts,.tsx --fix && stylelint \"src/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag v2.1.0",
     "build:lib": "node build/build-lib.js",
+    "build:site": "npm run build:entry && cross-env NODE_ENV=production webpack --config build/webpack.site.prd.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",

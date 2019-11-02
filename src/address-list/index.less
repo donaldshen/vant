@@ -23,10 +23,6 @@
 .van-address-item {
   padding: @address-list-item-padding;
 
-  &__value {
-    padding-right: @padding-xl;
-  }
-
   &__name {
     margin-bottom: @padding-base;
     font-weight: @font-weight-bold;
@@ -40,19 +36,32 @@
     line-height: @address-list-item-line-height;
   }
 
+  &__bar {
+    display: flex;
+    padding-top: 10px;
+  }
+
+  &__set-default {
+    flex: 1;
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: @address-list-edit-icon-size;
+  }
+
   &--disabled {
     .van-address-item__name,
-    .van-address-item__address {
+    .van-address-item__address,
+    .van-address-item__set-default .van-radio__label {
       color: @address-list-item-disabled-text-color;
     }
   }
 
   &__edit {
-    position: absolute;
-    top: 50%;
-    right: @padding-md;
-    font-size: @address-list-edit-icon-size;
-    transform: translate(0, -50%);
+    margin-right: 10px;
   }
 
   .van-radio__icon--checked .van-icon {

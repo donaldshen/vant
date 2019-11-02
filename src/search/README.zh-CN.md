@@ -24,18 +24,19 @@ v-model 用于控制搜索框中的文字，background 可以自定义搜索框�
 Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘上的搜索/回车按钮后触发，`cancel`事件在点击搜索框右侧取消按钮时触发
 
 ```html
-<form action="/">
+<form action="javascript:;">
   <van-search
     v-model="value"
     placeholder="请输入搜索关键词"
     show-action
     @search="onSearch"
     @cancel="onCancel"
+    :remove-form="true"
   />
 </form>
 ```
 
-> Tips: 在 van-search 外层增加 form 标签，且 action 不为空，即可在 iOS 输入法中显示搜索按钮
+> Tips: 如果你希望 van-search 和其他表单项嵌套在同一个 from 标签下，可以设置属性 remove-form 为 true
 
 ### 自定义按钮
 
@@ -73,6 +74,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | `search` | - |
 | right-icon | 输入框右侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| removeForm | 取消默认 form 元素嵌套，默认嵌套 form。在 iOS 下显示「搜索」按钮 | *boolean* | `false` | - |
 
 ### Events
 

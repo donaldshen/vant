@@ -8,6 +8,9 @@
         :disabled-text="$t('disabledText')"
         @add="onAdd"
         @edit="onEdit"
+        @delete="onDelete"
+        @click-item="onClick"
+        @set-default="onSetDefault"
       />
     </demo-block>
   </demo-section>
@@ -85,6 +88,18 @@ export default {
 
     onEdit(item, index) {
       this.$toast(`${this.$t('edit')}:${index}`);
+    },
+
+    onDelete(item, index) {
+      this.$toast(`${this.$t('delete')}:${index}`);
+    },
+
+    onClick(item, index) {
+      this.$toast(`点击:${index}`);
+    },
+
+    onSetDefault(item, index) {
+      this.$toast(`设为默认:${index}`);
     }
   }
 };
