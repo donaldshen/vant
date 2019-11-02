@@ -66,7 +66,6 @@ export default createComponent({
         class={bem()}
         readonly={true}
         onClick={($event) => this.triggle(true, $event)}
-        label="test"
         {...{ attrs: this.$attrs }}
         {...{ listeners: this.$listeners }}
       >
