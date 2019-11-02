@@ -17,10 +17,23 @@ Vue.use(Select);
 
 ### 基础用法
 
-v-model 用于绑定当前的选中值，ActionSheetItem 中的 `name` 属性值。
+v-model 用于绑定当前的选中值，[ActionSheetItem](https://femessage.github.io/vant/#/zh-CN/action-sheet#action-shu-ju-jie-gou) 中的 `name` 属性值。
 
 ```html
-<van-select v-model="value" :options="options" />
+<van-select v-model="value" :options="options" :placeholder="placeholder" />
+
+export default {
+  data() {
+    return {
+      value: '',
+      placeholder: '请选择性别',
+      options: [
+        { name: '男' },
+        { name: '女' },
+      ]
+    }
+  }
+}
 ```
 
 ### 事件监听
