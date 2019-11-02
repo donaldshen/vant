@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/youzan/vant/compare/v2.4.0...v3.0.0) (2019-11-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **ui:** more like [showyu, taobao, ...etc]
+* basically emit `set-default` event
+* add `set-default` button
+
+### Features
+
+* add `set-default` button ([3075cc5](https://github.com/youzan/vant/commit/3075cc5d6c76e6f63af7805ebccf60ffefc41508))
+* **ui:** more like [showyu, taobao, ...etc] ([bafeba7](https://github.com/youzan/vant/commit/bafeba7e3e6dc70b94ab87a0c3f140fb5d243cc3))
+* base feature complete ([0aa73b3](https://github.com/youzan/vant/commit/0aa73b3cb334738e0178f2dd1cf1025c89915f67))
+* basically emit `set-default` event ([5f677a5](https://github.com/youzan/vant/commit/5f677a5fa4a0a6b1426489d95411fbb585e9cc28))
+* enhance search input for iOS ([a59da44](https://github.com/youzan/vant/commit/a59da44083b71de480aa047e0470e82eea39ad4a))
+* form action eval javascript:; ([11fb528](https://github.com/youzan/vant/commit/11fb528960875552b54460a068f3e8463084a964))
+* init component select ([d4ab5d9](https://github.com/youzan/vant/commit/d4ab5d9928a9b71a26b483bc0dd76323268f46ac))
+* 增加 field/shared.ts 共享 field 组件的基本属性 ([3c1eaa6](https://github.com/youzan/vant/commit/3c1eaa67ecd9ec2a9dd313dfb3b9da5043eafee2))
+
+
+### Bug Fixes
+
+* remove default label ([4f96523](https://github.com/youzan/vant/commit/4f9652310a7f65df07cae4d7e70840c012b19a10))
+* set up item class ([c68c81d](https://github.com/youzan/vant/commit/c68c81d0f6b5b78c19c08b4502fa40a2505bc5d5))
+* unnecessary to import fieldProps ([ae6ebcb](https://github.com/youzan/vant/commit/ae6ebcb7e1d7b45e1cb4fce7b0610d5fc002a9a0))
+* 修正通知脚本 ([b1caf76](https://github.com/youzan/vant/commit/b1caf76d2be5ccc87768e17ad0ba9dba1f6b37b5))
+
 ## [2.4.0](https://github.com/youzan/vant/compare/v2.3.0...v2.4.0) (2019-10-23)
 
 
