@@ -4,96 +4,11 @@
       <van-cell-group>
         <van-select
           v-model="value"
-          label="bilibili"
-          :options="options"
-          :placeholder="$t('usernamePlaceholder')"
-          :sheetAttrs="{title: 'ceshi', 'cancel-text': '取消'}"
-        >
-        </van-select>
-      </van-cell-group>
-    </demo-block>
-
-    <demo-block :title="$t('title2')">
-      <van-cell-group>
-        <van-field
-          v-model="username"
-          :label="$t('username')"
-          :placeholder="$t('usernamePlaceholder')"
-          required
-          clearable
-          right-icon="question-o"
-          @click-right-icon="$toast('question')"
+          label="基本用法"
+          :options="options0"
+          :placeholder="$t('genders')"
+          @select="onSelect"
         />
-
-        <van-field
-          v-model="password"
-          type="password"
-          :label="$t('password')"
-          :placeholder="$t('passwordPlaceholder')"
-          required
-        />
-      </van-cell-group>
-    </demo-block>
-
-    <demo-block :title="$t('title3')">
-      <van-cell-group>
-        <van-field
-          :value="$t('inputDisabled')"
-          :label="$t('username')"
-          left-icon="contact"
-          disabled
-        />
-      </van-cell-group>
-    </demo-block>
-
-    <demo-block :title="$t('title4')">
-      <van-cell-group>
-        <van-field
-          v-model="username2"
-          :label="$t('username')"
-          :placeholder="$t('usernamePlaceholder')"
-          error
-        />
-        <van-field
-          v-model="phone"
-          :label="$t('phone')"
-          :placeholder="$t('phonePlaceholder')"
-          :error-message="$t('phoneError')"
-        />
-      </van-cell-group>
-    </demo-block>
-
-    <demo-block :title="$t('title5')">
-      <van-cell-group>
-        <van-field
-          v-model="message"
-          :label="$t('message')"
-          type="textarea"
-          :placeholder="$t('messagePlaceholder')"
-          rows="1"
-          autosize
-        />
-      </van-cell-group>
-    </demo-block>
-
-    <demo-block :title="$t('title6')">
-      <van-cell-group>
-        <van-field
-          center
-          clearable
-          v-model="sms"
-          :label="$t('sms')"
-          :placeholder="$t('smsPlaceholder')"
-        >
-          <template #button>
-            <van-button
-              size="small"
-              type="primary"
-            >
-              {{ $t('sendSMS') }}
-            </van-button>
-          </template>
-        </van-field>
       </van-cell-group>
     </demo-block>
   </demo-section>
@@ -116,7 +31,10 @@ export default {
       phonePlaceholder: '请输入手机号',
       messagePlaceholder: '请输入留言',
       inputDisabled: '输入框已禁用',
-      phoneError: '手机号格式错误'
+      phoneError: '手机号格式错误',
+      genders: '请选择性别',
+      male: '男',
+      female: '女'
     },
     'en-US': {
       title2: 'Custom type',
@@ -132,7 +50,10 @@ export default {
       phonePlaceholder: 'Phone',
       messagePlaceholder: 'Message',
       inputDisabled: 'Disabled',
-      phoneError: 'Invalid phone'
+      phoneError: 'Invalid phone',
+      genders: 'Select your gender',
+      male: 'male',
+      female: 'female'
     }
   },
 
@@ -145,12 +66,23 @@ export default {
       username2: '',
       message: '',
       phone: '1365577',
-      options: [
-        { name: '选项' },
-        { name: '选项' },
-      ],
     };
-  }
+  },
+
+  computed: {
+    options0() {
+      return [
+        { name: this.$t('male') },
+        { name: this.$t('female') },
+      ];
+    }
+  },
+
+  methods: {
+    onSelect(item, index) {
+      console.log(item, index);
+    }
+  },
 };
 </script>
 
