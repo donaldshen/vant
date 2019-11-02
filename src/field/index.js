@@ -286,6 +286,7 @@ export default createComponent({
           {this.renderRightIcon()}
           {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
+        {this.slots('default')}
         {this.errorMessage && (
           <div class={bem('error-message', this.errorMessageAlign)}>
             {this.errorMessage}
