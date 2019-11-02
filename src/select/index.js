@@ -1,6 +1,5 @@
 import { createNamespace } from '../utils';
 import Field from '../field';
-import fieldProps from '../field/shared';
 import ActionSheet from '../action-sheet';
 import { stopPropagation } from '../utils/dom/event';
 
@@ -27,7 +26,6 @@ const [createComponent, bem] = createNamespace('select');
 
 export default createComponent({
   props: {
-    ...fieldProps,
     ...selectProps,
   },
 
@@ -68,6 +66,7 @@ export default createComponent({
         class={bem()}
         readonly={true}
         onClick={($event) => this.triggle(true, $event)}
+        label="test"
         {...{ attrs: this.$attrs }}
         {...{ listeners: this.$listeners }}
       >
