@@ -32,6 +32,12 @@ export type ActionSheetProps = PopupMixinProps & {
   safeAreaInsetBottom?: boolean;
 };
 
+export type ActionSheetEvents = {
+  onCancel?(): void;
+  onSelect?(item: ActionSheetItem, index: number): void;
+  onInput?(value: boolean): void;
+};
+
 const [createComponent, bem] = createNamespace('action-sheet');
 
 function ActionSheet(
@@ -172,4 +178,4 @@ ActionSheet.props = {
   }
 };
 
-export default createComponent<ActionSheetProps>(ActionSheet);
+export default createComponent<ActionSheetProps, ActionSheetEvents>(ActionSheet);

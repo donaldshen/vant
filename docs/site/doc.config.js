@@ -180,6 +180,10 @@ export default {
               {
                 path: '/uploader',
                 title: 'Uploader 文件上传'
+              },
+              {
+                path: '/select',
+                title: 'Select 选择器'
               }
             ]
           },
@@ -523,6 +527,10 @@ export default {
               {
                 path: '/uploader',
                 title: 'Uploader'
+              },
+              {
+                path: '/select',
+                title: 'Select'
               }
             ]
           },
