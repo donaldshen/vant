@@ -1,6 +1,6 @@
 import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
-import { preventDefault } from '../utils/dom/event';
+import { preventDefault, stopPropagation } from '../utils/dom/event';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -46,6 +46,7 @@ function Overlay(
         style={style}
         class={[bem(), props.className]}
         onTouchmove={preventTouchMove}
+        onClick={stopPropagation}
         {...inherit(ctx, true)}
       >
         {slots.default && slots.default()}
