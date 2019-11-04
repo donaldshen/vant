@@ -57,7 +57,7 @@ export default createComponent({
           {this.slots(slotName)}
         </template>
       ));
-    }
+    },
   },
 
   render() {
@@ -78,9 +78,6 @@ export default createComponent({
           onSelect={this.onSelect}
           value={this.showSheet}
           actions={this.options}
-          // FIXME: 如果开启点击遮罩，会导致点击遮罩冒泡到 field 的 click 事件，导致再次打开 actionSheet
-          // onClickOverlay={stopPropagation}
-          closeOnClickOverlay={false}
           closeOnClickAction={true}
           onInput={this.triggle}
         />
