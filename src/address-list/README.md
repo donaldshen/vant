@@ -100,7 +100,10 @@ export default {
 
 ### Slots
 
-| Name | Description |
-|------|------|
+| Name | Description | SlotProps |
+|------|------|------|
 | default | Custom content after list |
 | top | Custom content before list |
+| radioIcon | Custom radio icon | checked: checked or not
+| edit | Custom edit icon |
+| delete | Custom delete icon |

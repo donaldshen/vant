@@ -112,7 +112,10 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
+| 名称 | 说明 | SlotProps |
+|------|------|------|
 | default | 在列表下方插入内容 |
 | top | 在顶部插入内容 |
+| radioIcon | 自定义radio图标 | checked: 是否为选中状态
+| edit | 自定义编辑icon |
+| delete | 自定义删除icon |
