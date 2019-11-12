@@ -110,6 +110,9 @@ Vue.use(Grid).use(GridItem);
 <van-grid :column-num="2">
   <van-grid-item icon="home-o" text="文字" dot />
   <van-grid-item icon="search" text="文字" info="99+" />
+  <van-grid-item text="文字" info="99+">
+    <span slot="icon">slot=icon</span>
+  </van-grid-item>
 </van-grid>
 ```
 

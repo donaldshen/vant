@@ -32,7 +32,8 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "vant commit-lint"
+      "commit-msg": "vant commit-lint",
+      "pre-push": "yarn test"
     }
   },
   "lint-staged": {

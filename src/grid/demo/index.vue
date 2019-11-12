@@ -49,6 +49,9 @@
       <van-grid :column-num="2">
         <van-grid-item icon="home-o" :text="$t('text')" dot />
         <van-grid-item icon="search" :text="$t('text')" info="99+" />
+        <van-grid-item :text="$t('text')" info="99+">
+          <span slot="icon">slot=icon</span>
+        </van-grid-item>
       </van-grid>
     </demo-block>
   </demo-section>
