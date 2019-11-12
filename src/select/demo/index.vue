@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       sms: '',
-      value: '',
+      value: 2,
       password: '',
       username: '',
       username2: '',
@@ -72,9 +72,15 @@ export default {
   computed: {
     options0() {
       return [
-        { name: this.$t('male') },
-        { name: this.$t('female') },
+        { name: this.$t('male'), value: 1 },
+        { name: this.$t('female'), value: 2 },
       ];
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.$toast(val);
     }
   },
 

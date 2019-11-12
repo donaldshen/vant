@@ -6,7 +6,7 @@ import Radio from '../radio';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 
 export type AddressItemData = {
   id: string | number;
@@ -18,6 +18,12 @@ export type AddressItemData = {
 export type AddressItemProps = {
   data: AddressItemData;
   disabled?: boolean;
+};
+
+export type AddressItemSlots = DefaultSlots & {
+  radioIcon?: ScopedSlot;
+  edit?: ScopedSlot;
+  delete?: ScopedSlot;
 };
 
 export type AddressItemEvents = {
@@ -32,7 +38,7 @@ const [createComponent, bem] = createNamespace('address-item');
 function AddressItem(
   h: CreateElement,
   props: AddressItemProps,
-  slots: DefaultSlots,
+  slots: AddressItemSlots,
   ctx: RenderContext<AddressItemProps>
 ) {
   const { disabled } = props;
@@ -47,22 +53,26 @@ function AddressItem(
 
   const renderRightIcon = () => (
     <div class={bem('icons-wrapper')}>
-      <Icon
-        name="edit"
+      <span
+        style="display: flex"
         class={bem('edit')}
         onClick={(event: Event) => {
           event.stopPropagation();
           emit(ctx, 'edit');
         }}
-      />
-      <Icon
-        name="delete"
+      >
+        {slots.edit ? slots.edit() : <Icon name="edit" />}
+      </span>
+      <span
+        style="display: flex"
         class={bem('delete')}
         onClick={(event: Event) => {
           event.stopPropagation();
           emit(ctx, 'delete');
         }}
-      />
+      >
+        {slots.delete ? slots.delete() : <Icon name="delete" />}
+      </span>
     </div>
   );
 
@@ -74,7 +84,12 @@ function AddressItem(
         <div class={bem('address')}>{data.address}</div>
       </div>,
       <div class={bem('bar')}>
-        <Radio name={data.id} onClick={onSetDefault} class={bem('set-default')}>
+        <Radio
+          name={data.id}
+          onClick={onSetDefault}
+          class={bem('set-default')}
+          scopedSlots={{ icon: slots.radioIcon }}
+        >
           设为默认
         </Radio>
         {renderRightIcon()}
@@ -98,7 +113,7 @@ function AddressItem(
 
 AddressItem.props = {
   data: Object,
-  disabled: Boolean,
+  disabled: Boolean
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(AddressItem);

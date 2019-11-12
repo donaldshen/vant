@@ -28,8 +28,8 @@ export default {
       value: '',
       placeholder: '请选择性别',
       options: [
-        { name: '男' },
-        { name: '女' },
+        { name: '男', value: 1 },
+        { name: '女', value: 2 },
       ]
     }
   }
