@@ -16,9 +16,7 @@ exports[`renders demo correctly 1`] = `
                 <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success">
                     <!----></i></div><span class="van-radio__label">设为默认</span>
               </div>
-              <div class="van-address-item__icons-wrapper"><i class="van-icon van-icon-edit van-address-item__edit">
-                  <!----></i><i class="van-icon van-icon-delete van-address-item__delete">
-                  <!----></i></div>
+              <div class="van-address-item__icons-wrapper"><span class="van-address-item__edit" style="display: flex;"><i class="van-icon van-icon-edit"><!----></i></span><span class="van-address-item__delete" style="display: flex;"><i class="van-icon van-icon-delete"><!----></i></span></div>
             </div>
           </div>
         </div>
@@ -33,9 +31,7 @@ exports[`renders demo correctly 1`] = `
                 <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
                     <!----></i></div><span class="van-radio__label">设为默认</span>
               </div>
-              <div class="van-address-item__icons-wrapper"><i class="van-icon van-icon-edit van-address-item__edit">
-                  <!----></i><i class="van-icon van-icon-delete van-address-item__delete">
-                  <!----></i></div>
+              <div class="van-address-item__icons-wrapper"><span class="van-address-item__edit" style="display: flex;"><i class="van-icon van-icon-edit"><!----></i></span><span class="van-address-item__delete" style="display: flex;"><i class="van-icon van-icon-delete"><!----></i></span></div>
             </div>
           </div>
         </div>
@@ -52,9 +48,7 @@ exports[`renders demo correctly 1`] = `
               <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
                   <!----></i></div><span class="van-radio__label">设为默认</span>
             </div>
-            <div class="van-address-item__icons-wrapper"><i class="van-icon van-icon-edit van-address-item__edit">
-                <!----></i><i class="van-icon van-icon-delete van-address-item__delete">
-                <!----></i></div>
+            <div class="van-address-item__icons-wrapper"><span class="van-address-item__edit" style="display: flex;"><i class="van-icon van-icon-edit"><!----></i></span><span class="van-address-item__delete" style="display: flex;"><i class="van-icon van-icon-delete"><!----></i></span></div>
           </div>
         </div>
       </div><button class="van-button van-button--danger van-button--large van-button--square van-address-list__add"><span class="van-button__text">新增地址</span></button>

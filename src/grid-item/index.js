@@ -3,6 +3,7 @@ import { BORDER } from '../utils/constant';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Icon from '../icon';
+import Info from '../info';
 
 const [createComponent, bem] = createNamespace('grid-item');
 
@@ -69,16 +70,13 @@ export default createComponent({
       }
 
       return [
-        this.slots('icon') ||
-          (this.icon && (
-            <Icon
-              name={this.icon}
-              dot={this.dot}
-              info={this.info}
-              size={this.parent.iconSize}
-              class={bem('icon')}
-            />
-          )),
+        <div style="display: flex; position: relative">
+          {this.slots('icon') ||
+            (this.icon && (
+              <Icon name={this.icon} size={this.parent.iconSize} class={bem('icon')} />
+            ))}
+          <Info dot={this.dot} info={this.info} />
+        </div>,
         this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>)
       ];
     }
