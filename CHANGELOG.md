@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/youzan/vant/compare/v3.0.0...v4.0.0) (2019-11-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **address-list:** 添加 `设为默认` 按钮
+* **ui:** more like [showyu, taobao, ...etc]
+* basically emit `set-default` event
+* add `set-default` button
+
+### Features
+
+* add `set-default` button ([88605f6](https://github.com/youzan/vant/commit/88605f6b716a5f5bb06a49977d49d760ec88b31a))
+* address-list增加radio、edit、delete处的插槽 ([#10](https://github.com/youzan/vant/issues/10)) ([7fd8462](https://github.com/youzan/vant/commit/7fd8462228fc2fae622245ebdfb3daa0fe2f90d3))
+* base feature complete ([0b1235c](https://github.com/youzan/vant/commit/0b1235cfea0b224993009e1cb9736885a0f83bb0))
+* basically emit `set-default` event ([29bb59a](https://github.com/youzan/vant/commit/29bb59a9109d8edd4a66387966b55c3ebdd3a2f3))
+* enhance search input for iOS ([deb7431](https://github.com/youzan/vant/commit/deb743117b8a93f3ad362e0935178d00887212ff))
+* form action eval javascript:; ([04294c2](https://github.com/youzan/vant/commit/04294c22e0d6a263d05ce45e64c9e309737a787a))
+* **search:** enhance search input for iOS ([839a5c6](https://github.com/youzan/vant/commit/839a5c651a916088b9e96471629935193c58e74f))
+* grid-item用icon插槽时也能用info属性 ([#12](https://github.com/youzan/vant/issues/12)) ([2405bcc](https://github.com/youzan/vant/commit/2405bcc12e5d0a0408c24f78ecd63b595bf5fd35))
+* init component select ([ebeb116](https://github.com/youzan/vant/commit/ebeb116824c5c4bae0bf51ebe8a91dcb5a18b1a1))
+* 增加 field/shared.ts 共享 field 组件的基本属性 ([122786e](https://github.com/youzan/vant/commit/122786e983ffecc6819ad99ab39473e062a2dd8a))
+* **address-list:** 添加 `设为默认` 按钮 ([c563022](https://github.com/youzan/vant/commit/c563022f8def6a5ca9fc736a054438452b01b379))
+* **select:** options为 name/value 形式([#9](https://github.com/youzan/vant/issues/9)) ([b1f739b](https://github.com/youzan/vant/commit/b1f739b386b52be15e9c6d389777cb5914fc1317))
+* **select:** 新增表单选择器组件 ([ccabd29](https://github.com/youzan/vant/commit/ccabd293beb0d08ba0ecc9ade68f67b7ce662f42))
+* **ui:** more like [showyu, taobao, ...etc] ([5d9e0d8](https://github.com/youzan/vant/commit/5d9e0d85c223f1763e92287eb1de28a35e9fbf12))
+
+
+### Bug Fixes
+
+* overlay propagation ([211dec2](https://github.com/youzan/vant/commit/211dec2f5e37d33ee9ec78084eb83e5ac5212a86))
+* remove default label ([256e0e9](https://github.com/youzan/vant/commit/256e0e989bf390813f8479876b4f9653cf7682f2))
+* set up item class ([7405927](https://github.com/youzan/vant/commit/74059272acdc474ce8426aa09e6790979293ba5a))
+* unnecessary to import fieldProps ([de28e54](https://github.com/youzan/vant/commit/de28e548fe9ba9c23e9b8e76a6e8aa08a2654f1f))
+* 修正通知脚本 ([d285a03](https://github.com/youzan/vant/commit/d285a037a38f1ab15e72740fefeaeeb1535a0ac5))
+* **select:** overlay propagation ([bdcf219](https://github.com/youzan/vant/commit/bdcf2194cf5b9b5e3b63ddea45c72f279c0ad1d2))
+
 ## [3.0.0](https://github.com/youzan/vant/compare/v2.4.0...v3.0.0) (2019-11-02)
 
 
